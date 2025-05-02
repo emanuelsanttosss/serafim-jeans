@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Serafim Confecções</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 50px;
+    }
+    h1, h2 {
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
+    input {
+      width: 80%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+    .btn {
+      display: block;
+      width: 200px;
+      margin: 10px auto;
+      padding: 15px;
+      background-color: white;
+      color: black;
+      border: none;
+      border-radius: 25px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background-color: #ddd;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Página Inicial (Home) -->
+  <div id="home">
+    <h1>Serafim Confecções</h1>
+    <a href="javascript:void(0);" onclick="showPage('login')"><button class="btn">Entrar</button></a>
+    <a href="javascript:void(0);" onclick="showPage('cadastro')"><button class="btn">Cadastrar</button></a>
+  </div>
+
+  <!-- Página de Cadastro -->
+  <div id="cadastro" style="display: none;">
+    <h2>Cadastro de Empresa</h2>
+    <form action="javascript:void(0);" onsubmit="showPage('painel')">
+      <input type="text" name="cnpj" placeholder="CNPJ" required><br>
+      <input type="text" name="empresa" placeholder="Nome da empresa" required><br>
+      <input type="text" name="usuario" placeholder="Seu usuário" required><br>
+      <input type="password" name="senha" placeholder="Senha" required><br>
+      <button type="submit" class="btn">Cadastrar</button>
+    </form>
+    <a href="javascript:void(0);" onclick="showPage('home')"><button class="btn">Voltar</button></a>
+  </div>
+
+  <!-- Página de Login -->
+  <div id="login" style="display: none;">
+    <h2>Login</h2>
+    <form action="javascript:void(0);" onsubmit="showPage('painel')">
+      <input type="text" name="usuario" placeholder="Usuário" required><br>
+      <input type="password" name="senha" placeholder="Senha" required><br>
+      <button type="submit" class="btn">Entrar</button>
+    </form>
+    <a href="javascript:void(0);" onclick="showPage('home')"><button class="btn">Voltar</button></a>
+  </div>
+
+  <!-- Página do Painel de Pedidos -->
+  <div id="painel" style="display: none;">
+    <h2>Bem-vindo à sua área de pedidos</h2>
+
+    <div class="pedido">
+      <p><strong>Loja:</strong> Loja A</p>
+      <p><strong>Referência:</strong> 12345</p>
+      <p><strong>Ordem de Serviço:</strong> OS789</p>
+      <p><strong>Nome do Corte:</strong> Calça Mom</p>
+      <p><strong>Quantidade de Peças:</strong> 200</p>
+      <div class="etapa">
+        <strong>Status:</strong> Em produção
+      </div>
+      <p class="data"><strong>Previsão de Entrega:</strong> 05/06/2025</p>
+      <p class="data"><strong>Data de Coleta:</strong> 01/05/2025</p>
+    </div>
+
+    <div class="pedido">
+      <p><strong>Loja:</strong> Loja B</p>
+      <p><strong>Referência:</strong> 67890</p>
+      <p><strong>Ordem de Serviço:</strong> OS456</p>
+      <p><strong>Nome do Corte:</strong> Ly</p>
+      <p><strong>Quantidade de Peças:</strong> 150</p>
+      <div class="etapa">
+        <strong>Status:</strong> Colocando botão
+      </div>
+      <p class="data"><strong>Previsão de Entrega:</strong> 07/06/2025</p>
+      <p class="data"><strong>Data de Coleta:</strong> 02/05/2025</p>
+    </div>
+
+    <div class="pedido">
+      <p><strong>Loja:</strong> Loja C</p>
+      <p><strong>Referência:</strong> 24680</p>
+      <p><strong>Ordem de Serviço:</strong> OS101</p>
+      <p><strong>Nome do Corte:</strong> Bermuda Alfaiataria</p>
+      <p><strong>Quantidade de Peças:</strong> 300</p>
+      <div class="etapa">
+        <strong>Status:</strong> Finalizando (embalando)
+      </div>
+      <p class="data"><strong>Previsão de Entrega:</strong> 10/06/2025</p>
+      <p class="data"><strong>Data de Coleta:</strong> 04/05/2025</p>
+    </div>
+
+    <a href="javascript:void(0);" onclick="showPage('home')"><button class="btn">Sair</button></a>
+  </div>
+
+  <script>
+    function showPage(page) {
+      // Esconder todas as páginas
+      document.getElementById('home').style.display = 'none';
+      document.getElementById('cadastro').style.display = 'none';
+      document.getElementById('login').style.display = 'none';
+      document.getElementById('painel').style.display = 'none';
+
+      // Exibir a página solicitada
+      document.getElementById(page).style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
